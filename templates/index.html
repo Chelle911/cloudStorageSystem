@@ -85,7 +85,7 @@
                             <div id="update-form-{{ file.id }}" class="update-form" style="display: none;">
                                 <form action="{{ url_for('update_file', file_id=file.id) }}" method="post">
                                     <div class="input-group">
-                                        <input type="text" name="new_name" value="{{ file.name }}">
+                                        <input type="text" name="new_name" value="{{ file.name }}" required >
                                         <button type="submit" class="btn primary">Update</button>
                                         <button type="button" class="btn secondary" onclick="hideUpdateForm({file_id })">Cancel</button>
                                     </div>
