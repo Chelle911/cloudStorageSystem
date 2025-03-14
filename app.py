@@ -16,16 +16,16 @@ def load_storage():
         try:
             return json.loads(files_env)
         except json.JSONDecodeError:
-            return []
+            return {"files": []}  # Return proper structure
 
-    if not os.path.exists("storage.json"):
-        return []
+    if not os.path.exists(STORAGE_FILE):  # Use constant
+        return {"files": []}  # Return proper structure
     try:
-        with open("storage.json", "r") as f:
+        with open(STORAGE_FILE, "r") as f:  # Use constant
             return json.load(f)
     except (json.JSONDecodeError, FileNotFoundError):
-        return []
-
+        return {"files": []}  
+        
 def save_storage(storage):
     os.environ["CLOUD_FILES"] = json.dumps(storage)
     
