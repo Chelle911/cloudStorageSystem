@@ -11,7 +11,7 @@ app.secret_key = 'your_secret_key'  # For flash messages
 STORAGE_FILE = 'storage.json'
 
 def load_storage():
-   files_env = os.environ.get("CLOUD_FILES")
+    files_env = os.environ.get("CLOUD_FILES")
     if files_env:
         try:
             return json.loads(files_env)
@@ -27,7 +27,7 @@ def load_storage():
         return []
 
 def save_storage(storage):
-   s.environ["CLOUD_FILES"] = json.dumps(storage)
+    os.environ["CLOUD_FILES"] = json.dumps(storage)
     
     try:
         with open("storage.json", "w") as f:
