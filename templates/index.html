@@ -26,18 +26,8 @@
             {% endwith %}
             
             <section class="upload-section">
-                <h2>Upload File</h2>
-                <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
-                    <div class="file-input-container">
-                        <label for="file" class="file-label">
-                            <i class="fas fa-upload"></i> Choose a file:
-                        </label>
-                        <input type="file" name="file" id="file">
-                        <button type="submit" class="btn primary">Upload</button>
-                    </div>
-                </form>
-                
-                <h3>Or Simulate Upload</h3>
+               
+                <h3>Simulate Upload</h3>
                 <form action="{{ url_for('simulate_upload') }}" method="post">
                     <div class="input-group">
                         <input type="text" name="filename" placeholder="Enter filename (e.g., document.pdf)">
